@@ -1,0 +1,17 @@
+--create view firstview AS 
+SELECT * from thisyear;
+GO 
+
+SELECT [Sold Price] from firstview; 
+GO 
+
+
+
+
+-----------------------
+
+
+GO 
+
+SELECT [Sold Price] from firstview; 
+GO 
