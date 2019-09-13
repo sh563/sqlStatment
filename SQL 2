@@ -1,0 +1,9 @@
+ create table students(
+ studentid varchar(20) not null,
+ studentlastname varchar(20) not null,
+ studentfirstname varchar(20) not null,
+ programgroupname varchar(20) not null,
+ term varchar(20) not null,
+ primary key(studentid)
+);
+
