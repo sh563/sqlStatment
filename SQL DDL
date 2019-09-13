@@ -1,0 +1,9 @@
+create table classes(
+classid varchar(20) not null,
+roomid varchar(20) not null,
+datetimeid varcahr(20) not null,
+coursename varchar(20) not null
+term varchar(20) not null,
+primary key(classid)
+);
+
