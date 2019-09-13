@@ -1,0 +1,20 @@
+create table commuintyinfo(
+comunityname varchar(20) not null,
+communitydata varchar(20) not null,
+);
+
+insert into commuintyinfo (comunityname,communitydata)
+values ('Central Park','Favourite pet is fish');
+insert into commuintyinfo (comunityname,communitydata)
+values ('Central Park','Favourite pet is dog');
+
+
+select * from thisyear as this
+where [Sold Price] <600000
+
+
+
+select this.Description ,this.Type,this.bedroom
+from thisyearas this , communityinfo as c
+where [sold price]<600000
+and this.community=communityinfo.communityname
