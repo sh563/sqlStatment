@@ -1,0 +1,31 @@
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A101', 'Smith', 'John', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A102', 'Jones', 'Mike', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A103', 'Smith', 'Susan', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A104', 'Bichon', 'Peanut', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A105', 'Smith', 'John', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A106', 'Kirk', 'James', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A107', 'Archer', 'Jonathan', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A108', 'Janeway', 'Catherine', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A109', 'Sisko', 'Benjamin', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A110', 'Pike', 'Christopher', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A111', 'Scott', 'Montgommery', 'CPCT');
+INSERT INTO students ( studentid, studentlastname, studentfirstname, programgroupname ) VALUES ( 'A112', 'Riker', 'William', 'CPCT');
+
+
+TO CHANGE THE VALUE OR THE NAME FROM ONE GROUP TO OTHER WHERE THEIR NAME IS LESS THAN 5 CHARACTERS.
+
+
+UPDATE students
+SET programgroupname='csat'
+where len(studentlastname)<5;
+
+
+
+UPDATE STUDENTS SET PROGREAMNAME = 'CSAT';
+
+
+
+HOOK UP BOTH THE TABLES.
+
+SELECT * FROM students,programgroupname
+students.programgroupname=programgroup.programgroupname;
