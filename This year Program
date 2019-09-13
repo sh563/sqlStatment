@@ -1,0 +1,7 @@
+To find the sum and avg.
+
+
+
+
+select community , avg([sold price]),sum([Sold Price]) from thisyear
+group by Community;
