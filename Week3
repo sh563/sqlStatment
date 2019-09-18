@@ -1,0 +1,17 @@
+CREATE TABLE Persons (
+    vegg_id var_char(20),
+    cost money,
+    vegg_name varchar(255),
+    quantity int(255),
+);
+
+-------------------------
+create table lots(
+lots_id varchar(20) primary key,
+vegg_id var_char(20),
+production_per_unir(20),
+);
+
+--------------------------
+
+insert statments.
