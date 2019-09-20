@@ -1,0 +1,31 @@
+\section {Farmer Joe Exercise Data}
+
+\begin{verbatim}
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '2' , 11, 'Peas', 'root' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '3' , 8,  'Tomatos', 'root' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '4' , 3,  'Corn', 'root' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '5' , 3,  'Squash', 'root' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '6' , 7,  'Artichokes', 'root' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '6' , 9,  'Aubergines', 'root' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '7' , 4,  'Asparagus', 'legumes' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '8' , 2,  'Green bean', 'legumes' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '9' , 8,  'Broccoflower', 'legumes') ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '10' , 12,  'Brussel Sprouts', 'legumes' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '11' , 5,  'Brocelli', 'legumes' ) ;
+insert into veggies ( veggie_id, veggie_price, veggie_name, veggie_type  ) values ( '12' , 6,  'Spinach', 'legumes') ;
+\end{verbatim}
+
+\begin{verbatim}
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '1' , 800,  'red', '1' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '2' , 500,  'orange', '2' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '3' , 300,  'yellow', '3' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '4' , 450,  'brown', '4' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '5' , 800,  'green', '5' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '6' , 800,  'violet', '6' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '7' , 950,  'fuschia', '7' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '8' , 820,  'purple', '8' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '9' , 400,  'CHARTREUSE', '9' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '10' , 500,  'grey', '10' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '11' , 375,  'magenta', '11' ) ; 
+insert into lots ( lot_id, quantity_of_vegatables, lot_name, veggie_id ) values ( '12' , 675,  'cyan', '20' ) ; 
+\end{verbatim}
