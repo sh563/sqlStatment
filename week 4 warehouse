@@ -1,0 +1,27 @@
+select * from orders,warehouse where
+orders.item_number=warehouse.item_number
+
+insert into warehouse(clomun1,2..)
+values(value1,...)
+
+
+insert into truck(cloumn1,...)
+values(value1,....)
+
+
+
+insert into order(colum1,,,,)
+values (value1,....)  
+
+
+
+
+
+
+select * from orders,warehouse,truck where
+orders.item_number=warehouse.item_number 
+and
+orders.truck_number=truck.truck_number
+
+
+select sum(warehouse.item_price*warehouse.quantity_instock) as amount from warehouse 
