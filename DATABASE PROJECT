@@ -1,0 +1,588 @@
+
+
+create database Hostel_management_system;
+create table Student(
+studentID varchar(20) NOT NULL,                       
+student_name varchar(20) NOT NULL,
+course_ID varchar(20) NOT NULL,
+roomID varchar(20) NOT NULL,
+phone_number varchar(20) NOT NULL,
+term varchar(20) NOT NULL,
+date_of_birth date NOT NULL,
+hostel_name varchar(20) NOT NULL,
+primary key (studentID));
+
+
+create table hostel(
+
+
+hostel_name varchar(20) NOT NULL,                    
+num_of_rooms int NOT NULL,
+num_of_beds int  NOT NULL,
+num_of_Students int  NOT NULL,
+incharge_name varchar(20) NOT NULL,
+
+primary key (hostel_name));
+
+
+
+create table room(                                    
+
+
+roomID varchar(20) NOT NULL,
+
+num_of_beds int NOT NULL,
+num_of_Students int NOT NULL,
+hostel_name varchar(20) NOT NULL,
+
+primary key (roomID));
+
+
+
+
+create table payment(                                 
+paymentID varchar(20) NOT NULL,
+studentID varchar(20) NOT NULL,
+
+Due_Date date NOT NULL,
+
+method_of_payment varchar(20) NOT NULL,
+hostel_fee varchar(20) NOT NULL,
+late_fees varchar(20) NOT NULL,
+primary key(paymentID))
+
+
+
+
+create table mess(                                      
+messID varchar(20) NOT NULL,
+meal_type varchar(20) NOT NULL,
+time_ varchar(20) NOT NULL,
+capacity int  NOT NULL,
+hostel_name varchar(20) NOT NULL)
+
+
+create table visitors(                                  
+guardian_name varchar(20) NOT NULL,
+date_of_visit date NOT NULL,
+studentID varchar(20) NOT NULL,
+phone_number varchar(20) NOT NULL,
+incharge_name varchar(20) NOT NULL)
+
+
+insert statements for all tables
+
+
+hostel table
+
+
+INSERT INTO hostel ( hostel_name, num_of_rooms, num_of_beds, num_of_Students,incharge_name)
+values('hostel_A', '6',24,15,'Michael');
+
+
+INSERT INTO hostel ( hostel_name, num_of_rooms, num_of_beds, num_of_Students,incharge_name)
+values('hostel_B', '8',32,18,'Lisa');
+
+INSERT INTO hostel ( hostel_name, num_of_rooms, num_of_beds, num_of_Students,incharge_name)
+values('hostel_C', '5',20,14,'karen');
+
+
+INSERT INTO hostel ( hostel_name, num_of_rooms, num_of_beds, num_of_Students,incharge_name)
+values('hostel_D', '4',20,04,'Richard');
+
+
+INSERT INTO hostel ( hostel_name, num_of_rooms, num_of_beds, num_of_Students,incharge_name)
+values('hostel_E', '5',15,12,'Steven');
+
+
+INSERT INTO hostel ( hostel_name, num_of_rooms, num_of_beds, num_of_Students,incharge_name)
+values('hostel_F', '15',30,15,'Mark');
+
+select*from hostel;
+
+
+room table
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HA01',4,4,'hostel_A');
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HA02',4,2,'hostel_A');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HA03',4,2,'hostel_A');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HA04',4,4,'hostel_A');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HA05',4,1,'hostel_A');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HA06',4,2,'hostel_A');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HB01',4,1,'hostel_B');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HB02',4,2,'hostel_B');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HB03',4,3,'hostel_B');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HB04',4,1,'hostel_B');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HB05',4,4,'hostel_B');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HB06',4,2,'hostel_B');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HB07',4,4,'hostel_B');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HB08',4,1,'hostel_B');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HB08',4,1,'hostel_B');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HC01',4,2,'hostel_C');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HC02',4,1,'hostel_C');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HC03',4,3,'hostel_C');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HC04',4,4,'hostel_C');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HC05',4,4,'hostel_C');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HD01',5,2,'hostel_D');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HD02',5,1,'hostel_D');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HD03',5,1,'hostel_D');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HD04',5,1,'hostel_D');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HE01',3,2,'hostel_E');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HE02',3,1,'hostel_E');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HE03',3,3,'hostel_E');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HE04',3,3,'hostel_E');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HE05',3,3,'hostel_E');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF01',2,1,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF02',2,2,'hostel_F');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF03',2,2,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF04',2,1,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF05',2,2,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF06',2,0,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF07',2,2,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF08',2,2,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF09',2,2,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF10',2,0,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF11',2,0,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF12',2,0,'hostel_F');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF13',2,0,'hostel_F');
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF14',2,0,'hostel_F');
+
+
+insert into room(roomID,num_of_beds,num_of_Students,hostel_name)
+values('HF15',2,1,'hostel_F');
+select*from room;
+
+mess table
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess01','breakfast','9.00am', 30 ,'hostel_A');
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess01','breakfast','10.00AM', 30 ,'hostel_B')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess01','lunch','1.30pm', 30 ,'hostel_A')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess01','lunch','2.00pm', 30 ,'hostel_B')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess01','dinner','9.00pm', 30 ,'hostel_A')
+
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess01','dinner','10.00pm', 30 ,'hostel_B')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess02','breakfast','9.00am', 40,'hostel_D')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess02','breakfast','10.00AM', 40 ,'hostel_C')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess02','lunch','1.30pm', 40 ,'hostel_D')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess02','lunch','2.00pm', 40 ,'hostel_C')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess02','dinner','9.00pm', 40 ,'hostel_D')
+
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess02','dinner','10.00pm', 40 ,'hostel_C')
+
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess03','breakfast','9.00am', 45 ,'hostel_F')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess03','breakfast','10.00AM', 45,'hostel_E')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess03','lunch','1.30pm', 45 ,'hostel_F')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess03','lunch','2.00pm', 45 ,'hostel_E')
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess03','dinner','9.00pm', 45 ,'hostel_F')
+
+
+insert into mess (messID,meal_type,time_,capacity,hostel_name)
+values('mess03','dinner','10.00pm', 45 ,'hostel_E')
+
+Student table
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757701', 'Shamil', 'csd_2206', 'HA01', '9876543241', '01', '1999-12-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757702', 'Anjali', 'csd_2206', 'HA01', '9576543242', '01', '1999-11-12', 'hostel_A')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757703', 'Manpreet', 'csd_2206', 'HA01', '9876543243', '01', '1999-10-12', 'hostel_A')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757704', 'Lovish', 'csd_2206', 'HA01', '9876543244', '01', '1999-09-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757705', 'Jashan', 'csd_2206', 'HA02', '9876543245', '01', '1999-08-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757706', 'Karan', 'csd_2206', 'HA02', '9176543246', '01', '1999-07-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757707', 'Kiran', 'csd_2206', 'HA03', '9876543247', '01', '1999-06-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757708', 'Nav', 'csd_2206', 'HA03', '9876544241', '01', '1999-05-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757709', 'Raman', 'csd_2206', 'HA04', '9876547241', '01', '1999-04-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757710', 'Jass', 'csd_2206', 'HA04', '9876542241', '01', '1999-03-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757711', 'Sukh', 'csd_2206', 'HA04', '9976543241', '01', '1999-02-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757712', 'Kajal', 'csd_2206', 'HA04', '9824543241', '01', '1999-01-12', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757713', 'Harman', 'csd_2206', 'HA05', '9876213241', '01', '1999-12-11', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757714', 'Guri', 'csd_2206', 'HA06', '9810543241', '01', '1999-12-10', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757715', 'John', 'csd_2206', 'HA06', '9876540841', '01', '1999-12-09', 'hostel_A')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757716', 'Smith', 'csd_1133', 'HB01', '9876543231', '02', '1999-12-08', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757717', 'Simar', 'csd_1133', 'HB02', '9876543231', '02', '1999-12-07', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757718', 'Simran', 'csd_1133', 'HB02', '9876543233', '02', '1999-12-06', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757719', 'Gurpreet', 'csd_1133', 'HB03', '9876543234', '02', '1999-12-05', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757720', 'Kaler', 'csd_1133', 'HB03', '9876543235', '02', '1999-12-04', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757721', 'Pannu', 'csd_1133', 'HB03', '9876543236', '02', '1999-12-03', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757722', 'Jeet', 'csd_1133', 'HB04', '9876543237', '02', '1999-12-02', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757723', 'Preet', 'csd_1133', 'HB05', '9876543238', '02', '1999-12-01', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757724', 'Harleen', 'csd_1133', 'HB05', '9076543239', '02', '1998-12-12', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757725', 'Gurleen', 'csd_1133', 'HB05', '9876512341', '02', '1998-10-12', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757726', 'Manu', 'csd_1133', 'HB05', '9876509441', '02', '1998-11-12', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757727', 'Navu', 'csd_1133', 'HB06', '9876528641', '02', '1998-09-12', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757728', 'Sewak', 'csd_1133', 'HB06', '9876518441', '02', '1998-08-12', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757729', 'Ranjit', 'csd_1133', 'HB07', '6376541234', '02', '1998-07-12', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757730', 'Sanam', 'csd_1133', 'HB07', '9876543412', '02', '1998-06-12', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757731', 'Dilpreet', 'csd_1194', 'HB07', '9876543086', '03', '1998-05-12', 'hostel_B')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757732', 'Ramanjit', 'csd_1194', 'HB07', '9876543109', '03', '1998-04-12', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757733', 'Jasleen', 'csd_1194', 'HB08', '9876543111', '03', '1998-03-12', 'hostel_B')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757734', 'Jia', 'csd_1194', 'HC01', '9876543222', '03', '1998-02-12', 'hostel_C')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757735', 'Sharma', 'csd_1194', 'HC01', '9876543333', '03', '1998-01-12', 'hostel_C')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757736', 'Shweta', 'csd_1194', 'HC02', '9876543444', '03', '1997-12-12', 'hostel_C')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757737', 'Man', 'csd_1194', 'HC03', '9876543555', '03', '1997-11-12', 'hostel_C')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757738', 'Shaam', 'csd_1194', 'HC03', '9876543666', '03', '1997-10-12', 'hostel_C')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757739', 'Karn', 'csd_1194', 'HC03', '9876543777', '03', '1997-09-12', 'hostel_C')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757740', 'Dev', 'csd_1194', 'HC04', '9876543888', '03', '1997-08-12', 'hostel_C')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757741', 'Happy', 'csd_1194', 'HC04', '9876543999', '03', '1997-07-12', 'hostel_C')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757742', 'Lovely', 'csd_1194', 'HC04', '9876543000', '03', '1997-06-12', 'hostel_C')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757743', 'Pinky', 'csd_1194', 'HC04', '9871113241', '03', '1997-05-12', 'hostel_C')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757744', 'Rimpy', 'csd_1194', 'HC05', '9872223241', '03', '1997-04-12', 'hostel_C')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757745', 'Navneet', 'csd_1194', 'HC05', '9873333241', '03', '1997-03-12', 'hostel_C')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757746', 'Gurdev', 'csd_1113', 'HC05', '9876444241', '04', '1997-02-12', 'hostel_C')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757747', 'Muskan', 'csd_1113', 'HC05', '9876555241', '04', '1997-01-12', 'hostel_C')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757748', 'Pinder', 'csd_1113', 'HD01', '6576666241', '04', '1997-12-11', 'hostel_D')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757749', 'Jill', 'csd_1113', 'HD01', '9877732141', '04', '1997-12-10', 'hostel_D')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757750', 'Xun', 'csd_1113', 'HD02', '9876888241', '04', '1997-12-09', 'hostel_D')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757751', 'Cao', 'csd_1113', 'HD03', '6476999241', '04', '1997-12-08', 'hostel_D')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757752', 'Tiago', 'csd_1113', 'HD04', '9876000241', '04', '1997-12-07', 'hostel_D')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757753', 'Sergio', 'csd_1113', 'HE01', '9876556241', '04', '1997-12-06', 'hostel_E')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757754', 'Ivan', 'csd_1113', 'HE01', '9870543241', '04', '1997-12-05', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757755', 'Nitish', 'csd_1113', 'HE02', '9871543241', '04', '1997-12-04', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757756', 'Ritika', 'csd_1113', 'HE03', '9872543241', '04', '1997-12-03', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757757', 'Kajol', 'csd_1113', 'HE03', '8173543241', '04', '1997-12-02', 'hostel_E')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757758', 'Prince', 'csd_1113', 'HE03', '9874543241', '04', '1997-12-01', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757759', 'Katty', 'csd_1113', 'HE04', '9875543241', '04', '2000-12-12', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757760', 'Manav', 'csd_1113', 'HE04', '9878543241', '04', '2000-11-12', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757761', 'Shubham', 'csd_1234', 'HE04', '9879543241', '01', '2000-10-12', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757762', 'Sunil', 'csd_1234', 'HE05', '9876543271', '01', '2000-09-12', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757763', 'Sagar', 'csd_1234', 'HE05', '8276543272', '01', '2000-08-12', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757764', 'Mehta', 'csd_1234', 'HE05', '9876543273', '01', '2000-07-05', 'hostel_E')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757765', 'Arnav', 'csd_1234', 'HF01', '9876543274', '01', '2000-06-12', 'hostel_F')
+
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757766', 'Kunal', 'csd_1234', 'HF02', '9876543275', '02', '2000-05-12', 'hostel_F')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757767', 'Mandeep', 'csd_1234', 'HF02', '9876543276', '02', '2000-04-12', 'hostel_F')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757768', 'Rajbir', 'csd_1234', 'HF03', '8576543277', '02', '2000-03-07', 'hostel_F')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757769', 'Harjot', 'csd_1234', 'HF03', '9876543278', '02', '2000-02-12', 'hostel_F')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757770', 'Jyoti', 'csd_1234', 'HF04', '9876543279', '02', '2000-01-12', 'hostel_F')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757771', 'Shally', 'csd_2204', 'HF05', '9876543280', '03', '2001-12-08', 'hostel_F')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757772', 'Meena', 'csd_2204', 'HF05', '9876543281', '03', '2001-11-12', 'hostel_F')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757773', 'Jaskaran', 'csd_2204', 'HF07', '9876543282', '03', '2001-10-10', 'hostel_F')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name)  values('c0757774', 'Navdeep', 'csd_2204', 'HF07', '8076543283', '03', '2001-09-12', 'hostel_F')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757775', 'Navpreet', 'csd_2204', 'HF08', '9876543284', '03', '2001-08-12', 'hostel_F')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757776', 'Smara', 'csd_2204', 'HF08', '9876543285', '04', '2001-07-11', 'hostel_F')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757777', 'Ravi', 'csd_2204', 'HF09', '6476543286', '04', '2001-06-12', 'hostel_F')
+ insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values('c0757778', 'Mankirt', 'csd_2204', 'HF09', '9876543287', '04', '2001-05-03', 'hostel_F')
+insert into Student (studentID,student_name, course_ID, roomID, phone_number, term, date_of_birth, hostel_name) values( 'c0757779', 'Gurkirat', 'csd_2204', 'HF15', '9876543288', '04', '2001-04-12', 'hostel_F')
+
+data in visitors:
+
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Manpreet', '2019-09-12', 'c0757702', '6478934569', 'Nitika');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Gurjit', '2019-08-12', 'c0757709', '6478934532', 'Ritika');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Harjit', '2019-09-18', 'c0757715', '6478934534', 'Kajal');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Gurpreet', '2018-09-12', 'c0757718', '6478934590', 'Nitika');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Guri', '2019-04-12', 'c0757723', '6478989569', 'Jashan');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Anjali', '2019-09-12', 'c0757728', '6428034569', 'Hardeep');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Mandeep', '2019-09-10', 'c0757731', '9828934569', 'Nitika');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Manjit', '2018-08-12', 'c0757735', '8058934569', 'Shamil');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Mannu', '2019-01-12', 'c0757739', '8478934569', 'Kiran');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Simran', '2019-09-12', 'c0757742', '8678934569', 'Nitika');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Navdeep', '2018-02-12', 'c0757746', '6478934444', 'Gurleen');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Navpreet', '2019-09-12', 'c0757749', '6478934999', 'Ritika');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Sunil', '2019-07-10', 'c0757753', '6478934333', 'Gurjot');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Sushil', '2018-09-10', 'c0757759', '6478934786', 'Sirat');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Kunal', '2019-08-02', 'c0757761', '6478934222', 'Ritika');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Jass', '2018-09-26', 'c0757764', '6478934123', 'Sanamdeep');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Jasleen', '2019-09-12', 'c0757766', '6478934084', 'Ritika');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Harpreet', '2018-01-15', 'c0757768', '6423434569', 'Manu');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Karan', '2018-02-04', 'c0757771', '9738934569', 'Ritika');
+INSERT INTO visitors (guardian_name, date_of_visit, studentID, phone_number, incharge_name)
+VALUES ('Kirandeep', '2018-01-06', 'c0757772', '9468934569', 'Ritika');
+
+payment data:
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781201','c0757701','01/11/2019','card',3152,00);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781202','c0757702','01/11/2019','cash',3152,55); 
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781203','c0757703','01/11/2019','E-Transfer',3152,20);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781204','c0757704','01/11/2019','cheque',3152,00) ;
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781205','c0757705','01/11/2019','E-Transfer',3152,15); 
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781206','c0757706','01/11/2019','card',3152,65) ;
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781207','c0757707','01/11/2019','cheque',3152,45); 
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781208','c0757708','01/11/2019','cash',3152,75);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781209','c0757709','01/11/2019','cash',3152,65);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781210','c0757710','01/11/2019','cash',3152,15) ;
+
+
+
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781211','c0757711','01/09/2019','cash',3152,0);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781212','c0757712','01/09/2019','E-transfer',3152,45); 
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781213','c0757713','01/09/2019','cheque',3152,65);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781214','c0757714', '01/09/2019','cash',3152,65);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781215','c0757715', '01/09/2019','cash',3152,45);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781216','c0757716','01/09/2019','card',3152,35) ;
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781217','c0757717', '01/09/2019','cheque',3152,55);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781218','c0757718','01/09/2019','E-transfer',3152,65);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781219','c0757719','01/09/2019','cash',3152,35);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781220','c0757720', '01/09/2019','cash',3152,75);
+
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781221','c0757721','08/11/2019','card',3152,0);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781222','c0757722', '08/11/2019','E-transfer',3152,95);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781223','c0757723','08/11/2019','cash',3152,45);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781224','c0757724', '08/11/2019','card',3152,35);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781225','c0757725', '08/11/2019','cheque',3152,25);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781226','c0757726','08/11/2019','cash',3152,25) ;
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781227','c0757727', '08/11/2019','cash',3152,15);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781228','c0757728','08/11/2019','E-transfer',3152,15);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781229','c0757729','08/11/2019','cash',3152,05);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781230','c0757730', '08/11/2019','cheque',3152,55);
+
+
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781231','c0757731','01/11/2018','cheque',3152,05);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781232','c0757732','01/11/2018','E-transfer',3152,55); 
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781233','c0757733','01/11/2018','cash',3152,55);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781234','c0757734', '01/11/2018','card',3152,15);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781235','c0757735', '01/11/2018','cash',3152,25);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781236','c0757736', '01/11/2018','cheque',3152,35);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781237','c0757737', '01/11/2018','E-transfer',3152,05);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781238','c0757738','01/11/2018','cash',3152,75);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781239','c0757739','01/11/2018','card',3152,65);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781240','c0757740', '01/11/2018','cheque',3152,55);
+
+
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781241','c0757741','01/12/2019','card',3152,35);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781242','c0757742','01/12/2019','cheque',3152,65); 
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781243','c0757743','01/12/2019','cash',3152,35);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781244','c0757744', '01/12/2019','E-transfer',3152,75);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781245','c0757745', '01/12/2019','card',3152,65);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781246','c0757846', '01/12/2019','cheque',3152,15);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781247','c0757747', '01/12/2019','card',3152,25);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781248','c0757748','01/12/2019','E-transfer',3152,35);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781249','c0757749','01/12/2019','cash',3152,45);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781250','c0757750', '01/12/2019','cheque',3152,65);
+
+
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781251','c0757751','03/11/2019','card',3152,08);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781252','c0757752','03/11/2019','cash',3152,45); 
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781253','c0757753','03/11/2019','cash',3152,35);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781254','c0757754', '03/11/2019','cash',3152,15);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781255','c0757755', '03/11/2019','cash',3152,65);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781256','c0757756', '03/11/2019','cash',3152,75);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781257','c0757757', '03/11/2019','cash',3152,35);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781258','c0757758','03/11/2019','cash',3152,25);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781259','c0757759','03/11/2019','cash',3152,05);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781260','c0757760', '03/11/2019','cash',3152,85);
+
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781261','c0757761','01/11/2017','card',3152,20);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781262','c0757762','01/11/2017','cheque',3152,55); 
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781263','c0757763','01/11/2017','E-transfer',3152,45);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781264','c0757764', '01/11/2017','cash',3152,25);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781265','c0757765', '01/11/2017','cash',3152,15);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781266','c0757766', '01/11/2017','card',3152,65);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781267','c0757767', '01/11/2017','cash',3152,25);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781268','c0757768','01/11/2017','E-transfer',3152,75);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781269','c0757769','01/11/2017','cash',3152,45);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781270','c0757770', '01/11/2017','card',3152,35);
+
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781271','c0757771','01/10/2019','card',3152,25);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781272','c0757772','01/10/2019','cash',3152,25); 
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781273','c0757773','01/10/2019','card',3152,95);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781274','c0757774', '01/10/2019','cheque',3152,65);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values('#CA781275','c0757775', '01/10/2019','E-transfer',3152,45);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781276','c0757776', '01/10/2019','card',3152,25);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781277','c0757777', '01/10/2019','cash',3152,15);
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781278','c0757778','01/10/2019','card',3152,65);
+
+insert into payment (paymentID,studentID,Due_Date, method_of_payment, hostel_fee, late_fees) values( '#CA781279','c0757779','01/10/2019','cash',3152,85);
+
+
+
+
+sql statements for requirements:
+
+1)
+*information to student with studentId
+SELECT hostel_name,student_name,course_ID,roomID,phone_number,term,date_of_birth
+FROM Student
+WHERE studentID = ANY (SELECT studentID FROM Student WHERE studentID = 'c0757705');
+
+*information to students regarding their mess schedule with hostel name
+
+select time_,messID,hostel_name,meal_type
+from mess
+WHERE hostel_name = ANY (SELECT hostel_name FROM mess WHERE hostel_name = 'hostel_A');
+*payment information to student
+SELECT paymentID,studentID,hostel_fee,late_fees,Due_Date
+FROM payment
+WHERE studentID = ANY (SELECT studentID FROM Student WHERE studentID = 'c0757705');
+
+2) payment report for management with student information 
+SELECT paymentID,studentID,hostel_fee,late_fees
+FROM payment
+WHERE Due_Date = ANY (SELECT Due_Date FROM payment WHERE Due_Date = '');
+
+
+*for management to check who visited hostel on which date 
+SELECT guardian_name,studentID,phone_number,incharge_name
+FROM visitors
+WHERE date_of_visit = ANY (SELECT date_of_visit FROM visitors WHERE date_of_visit = '2019-08-12');
+*according to incharge name
+SELECT guardian_name,studentID,phone_number,incharge_name
+FROM visitors
+WHERE incharge_name = ANY (SELECT incharge_name FROM visitors WHERE incharge_name = 'Nitika');
+ 
+3)
+*space according to hostel:
+select hostel.hostel_name, hostel.num_of_beds,hostel.num_of_Students,(num_of_beds-num_of_Students) as space 
+from hostel;
+
+
+*space according to rooms
+select room.roomID,room.num_of_beds,room.num_of_Students,(num_of_beds-num_of_Students) as space_available
+from room;
+
+4)
+ *for mess manager to get information about how many students will eat at what time 
+SELECT mess.messID,mess.capacity,mess.meal_type,mess.time_, hostel.num_of_Students
+FROM hostel,mess
+
+where hostel.hostel_name = mess.hostel_name;
+
+*for checking availabity in mess
+select mess.capacity,hostel.num_of_Students,( mess.capacity-hostel.num_of_Students) as available_space
+FROM hostel,mess
+
+where hostel.hostel_name = mess.hostel_name;
+
+	
+
+
